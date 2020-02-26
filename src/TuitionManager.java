@@ -31,7 +31,7 @@ public class TuitionManager
                String fname = sc.next();
                String lname = sc.next();
                if(studentList.contains(fname, lname)){
-                       studentList.remove(fname, lname));
+                  studentList.remove(fname, lname);
                }
                break;
             case 'P' :

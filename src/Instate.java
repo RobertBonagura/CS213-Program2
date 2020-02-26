@@ -11,16 +11,16 @@ public class Instate extends Student
            
       int creditsToBill;
       if(credits > MAX_BILLABLE_CREDITS){
-              creditsToBill = MAX_BILLABLE_CREDITS;
+         creditsToBill = MAX_BILLABLE_CREDITS;
       } else {
-              creditsToBill = credits;
+         creditsToBill = credits;
       }
       
       int feeToPayÎ;
       if(credits >= FULL_TIME_CREDIT_MIN){
-              feeToPay = FULL_TIME_FEE;
+         feeToPay = FULL_TIME_FEE;
       } else {
-              feeToPay = PART_TIME_FEE;
+         feeToPay = PART_TIME_FEE;
       }
 
       return (creditsToBill * COST_PER_CREDIT) + feeToPay - funding;
