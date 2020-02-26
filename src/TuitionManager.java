@@ -28,14 +28,14 @@ public class TuitionManager
                }
                break;
             case 'R' :
-					String fname = sc.next();
-					String lname = sc.next();
-					if(studentList.contains(fname, lname)){
-							  studentList.remove(fname, lname));
-					}
+               String fname = sc.next();
+               String lname = sc.next();
+               if(studentList.contains(fname, lname)){
+                       studentList.remove(fname, lname));
+               }
                break;
             case 'P' :
-					studentList.print();
+               studentList.print();
                break;
             case 'Q' :
                exit = true;
