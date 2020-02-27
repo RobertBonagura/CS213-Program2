@@ -16,7 +16,7 @@ public class Instate extends Student
          creditsToBill = credits;
       }
       
-      int feeToPayÎ;
+      int feeToPay;
       if(credits >= FULL_TIME_CREDIT_MIN){
          feeToPay = FULL_TIME_FEE;
       } else {
