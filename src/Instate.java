@@ -2,9 +2,9 @@ public class Instate extends Student
 {
 
    private int funding;
-   public Instate(String fname, String lname, int credit, int funding)
+   public Instate(String fName, String lName, int credit, int funding)
    {
-      super(fname, lname, credit);
+      super(fName, lName, credit);
       this.funding = funding;
    }
    public int tuitionDue(){

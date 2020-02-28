@@ -5,38 +5,38 @@ abstract class Student implements Comparable {
    protected final int PART_TIME_FEE = 846;
    protected final int FULL_TIME_FEE = 1441;
 
-   private String fname;
-   private String lname;
+   private String fName;
+   private String lName;
    private int credit;
    
-   public Student(String fname, String lname, int credit) {
-      this.fname = fname;
-      this.lname = lname;
+   public Student(String fName, String lName, int credit) {
+      this.fName = fName;
+      this.lName = lName;
       this.credit = credit;
    }
 
    public int compareTo(Object obj){
       if(obj instanceof Student){
          Student comparedStudent = (Student)(obj);
-         if(fname.compareTo(comparedStudent.getFName()) != 0)
-            return fname.compareTo(comparedStudent.getFName());   
+         if(fName.compareTo(comparedStudent.getFName()) != 0)
+            return fName.compareTo(comparedStudent.getFName());
          else{
-            return lname.compareTo(comparedStudent.getLName());   
+            return lName.compareTo(comparedStudent.getLName());
          }
       }
       return 1;//Only called if obj isn't a student
    }
 
    public String toString() {
-      return ("Name: " + fname + " " + lname + "\nCredits: " + credit + "\n");
+      return ("Name: " + fName + " " + lName + "\nCredits: " + credit + "\n");
    }
    
    public String getFName(){
-      return fname;
+      return fName;
    }
 
    public String getLName(){
-      return lname;
+      return lName;
    }
 
 
