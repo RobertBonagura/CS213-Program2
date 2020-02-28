@@ -1,7 +1,8 @@
+/**
+ *  Container class used to hold a list fo students.
+ */
 public class StudentList {
 
-   private static int INITIAL_CAPACITY = 10;
-   private static int GROWTH_RATE = 2;
    private int capacity;
    private int size;
    private Student[] students;
@@ -10,35 +11,66 @@ public class StudentList {
     * Default constructor, sets StudentList to default capacity of 10.
     */
    public StudentList(){
+      int INITIAL_CAPACITY = 10;
       this.capacity = INITIAL_CAPACITY;
       this.size = 0;
       this.students = new Student[INITIAL_CAPACITY];
    }
 
+   /**
+    * Adds student to list of Students.
+    * @param student Student to add to list
+    */
    public void add(Student student){
       this.students[this.size] = student;
       this.size++;
-      if (size == capacity){
+      if (this.size == capacity){
          this.grow();
       }
-      return;
    }
 
+   /**
+    * Increases the capacity of the list of students by doubling the size
+    * underlying array.
+    * Calls Array constructor to create a new list and then iterate over each
+    * element in the old array to copy into the new array.
+    */
    private void grow() {
+      int GROWTH_RATE = 2;
       int newCapacity = capacity * GROWTH_RATE;
       Student[] newStudents = new Student[newCapacity];
       for (int i = 0; i < this.size; i++){
          newStudents[i] = this.students[i];
       }
       this.students = newStudents;
-      return;
    }
 
+   /**
+    * Removes student from list.
+    * Iterates over list to find the specified student to remove.
+    * Continues iterating through the rest of the list to move each element
+    * back one index so that the underlying array's size always represents the
+    * index to add a new student.
+    * @param student Student to remove from list
+    */
   private void remove(Student student){
-
+      for (int i = 0; i < this.students.length; i++){
+        if (this.students[i].compareTo(student) == 0){
+         for (int j = i; j < this.students.length - 1; j++){
+            this.students[i] = this.students[i+1];
+         }
+         return;
+        }
+      }
   }
 
+   /**
+    * Prints list of students to console.
+    * Iterates through list and calls toString() method on each student.
+    */
    public void show(){
-      return;
+      for (Student student : this.students) {
+         System.out.println(student.toString());
+      }
    }
 }
