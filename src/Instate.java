@@ -10,14 +10,14 @@ public class Instate extends Student
    public int tuitionDue(){
            
       int creditsToBill;
-      if(credits > MAX_BILLABLE_CREDITS){
+      if(getCredit() > MAX_BILLABLE_CREDITS){
          creditsToBill = MAX_BILLABLE_CREDITS;
       } else {
-         creditsToBill = credits;
+         creditsToBill = getCredit();
       }
       
       int feeToPay;
-      if(credits >= FULL_TIME_CREDIT_MIN){
+      if(getCredit() >= FULL_TIME_CREDIT_MIN){
          feeToPay = FULL_TIME_FEE;
       } else {
          feeToPay = PART_TIME_FEE;

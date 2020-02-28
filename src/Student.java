@@ -1,13 +1,13 @@
 abstract class Student implements Comparable {
 
-   private final int FULL_TIME_CREDIT_MIN = 12;
-   private final int MAX_BILLABLE_CREDITS = 15;
-   private final int PART_TIME_FEE = 846;
-   private final int FULL_TIME_FEE = 1441;
+   protected final int FULL_TIME_CREDIT_MIN = 12;
+   protected final int MAX_BILLABLE_CREDITS = 15;
+   protected final int PART_TIME_FEE = 846;
+   protected final int FULL_TIME_FEE = 1441;
 
    private String fname;
    private String lname;
-   protected int credit;
+   private int credit;
    
    public Student(String fname, String lname, int credit) {
       this.fname = fname;
@@ -34,11 +34,15 @@ abstract class Student implements Comparable {
    public String getFName(){
       return fname;
    }
+
    public String getLName(){
       return lname;
    }
 
 
+   public int getCredit() {
+      return credit;
+   }
+
    public abstract int tuitionDue();
-      
 }
