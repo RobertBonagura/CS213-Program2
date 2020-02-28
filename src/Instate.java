@@ -25,6 +25,10 @@ public class Instate extends Student
          feeToPay = PART_TIME_FEE;
       }
 
+      if (getCredit() < FULL_TIME_CREDIT_MIN) {
+         this.funding = 0;
+      }
+
       return (creditsToBill * COST_PER_CREDIT) + feeToPay - funding;
    }
 }
