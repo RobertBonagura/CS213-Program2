@@ -1,6 +1,6 @@
 public class Instate extends Student
 {
-   private final int COST_PER_CREDIT = 433;
+
    private int funding;
    public Instate(String fname, String lname, int credit, int funding)
    {
@@ -8,6 +8,8 @@ public class Instate extends Student
       this.funding = funding;
    }
    public int tuitionDue(){
+
+      final int COST_PER_CREDIT = 433;
            
       int creditsToBill;
       if(getCredit() > MAX_BILLABLE_CREDITS){
