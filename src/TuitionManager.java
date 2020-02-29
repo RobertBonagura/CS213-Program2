@@ -28,14 +28,14 @@ public class TuitionManager
                }
                break;
             case 'R' :
-               String fname = sc.next();
-               String lname = sc.next();
-               if(studentList.contains(fname, lname)){
-                  studentList.remove(fname, lname);
+               String fName = sc.next();
+               String lName = sc.next();
+               if(studentList.contains(fName, lName)){
+                  studentList.remove(fName, lName);
                }
                break;
             case 'P' :
-               studentList.print();
+               studentList.show();
                break;
             case 'Q' :
                exit = true;
@@ -59,15 +59,15 @@ public class TuitionManager
       return true;
    }
    private Instate createInstateFromInput(Scanner sc){
-      String fname = sc.next();
-      String lname = sc.next();
+      String fName = sc.next();
+      String lName = sc.next();
       int credit = sc.nextInt();
       int funding = sc.nextInt();
-      return new Instate(fname, lname, credit, funding);
+      return new Instate(fName, lName, credit, funding);
    }
    private Outstate createOutstateFromInput(Scanner sc){
-      String fname = sc.next();
-      String lname = sc.next();
+      String fName = sc.next();
+      String lName = sc.next();
       int credit = sc.nextInt();
       int tristateChar = sc.nextInt();
       boolean isTristate;
@@ -76,11 +76,11 @@ public class TuitionManager
       }else{
          isTristate = false;
       }
-      return new Outstate(fname, lname, credit, isTristate);
+      return new Outstate(fName, lName, credit, isTristate);
    }
    private International CreateInternationalFromInput(Scanner sc){
-      String fname = sc.next();
-      String lname = sc.next();
+      String fName = sc.next();
+      String lName = sc.next();
       int credit = sc.nextInt();
       int exchangeChar = sc.nextInt();
       boolean isExchange;
@@ -89,7 +89,7 @@ public class TuitionManager
       } else{
          isExchange = false;
       }
-      return new International(fname, lname, credit, isExchange);
+      return new International(fName, lName, credit, isExchange);
    }
 
 }
