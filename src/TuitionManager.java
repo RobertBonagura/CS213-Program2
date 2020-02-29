@@ -7,43 +7,57 @@ public class TuitionManager
 
       boolean exit = false;
       while(!exit){
-         char command = sc.nextInt();
+         char command = sc.next().charAt(0);
          switch(command){
             case 'I' :
-               Instate studentToAdd = createInstateFromInput(sc);
-               if(addRequestIsValid(studentToAdd, studentList)){
-                  studentList.add(studentToAdd);
+               {
+                  Instate studentToAdd = createInstateFromInput(sc);
+                  if(addRequestIsValid(studentToAdd, studentList)){
+                     studentList.add(studentToAdd);
+                  }
+                  break;
                }
-               break;
             case 'O' :
-               Outstate studentToAdd = createOutstateFromInput(sc);
-               if(addRequestIsValid(studentToAdd, studentList)){
-                  studentList.add(studentToAdd);
+               {
+                  Outstate studentToAdd = createOutstateFromInput(sc);
+                  if(addRequestIsValid(studentToAdd, studentList)){
+                     studentList.add(studentToAdd);
+                  }
+                  break;
                }
-               break;
             case 'N' :
-               International studentToAdd = createInternationalFromInput(sc);
-               if(addRequestIsValid(studentToAdd, studentList)){
-                  studentList.add(studentToAdd);
+               {
+                  International studentToAdd = createInternationalFromInput(sc);
+                  if(addRequestIsValid(studentToAdd, studentList)){
+                     studentList.add(studentToAdd);
+                  }
+                  break;
                }
-               break;
             case 'R' :
-               String fName = sc.next();
-               String lName = sc.next();
-               if(studentList.contains(fName, lName)){
-                  studentList.remove(fName, lName);
+               {
+                  String fName = sc.next();
+                  String lName = sc.next();
+                  if(studentList.contains(fName, lName)){
+                     studentList.remove(fName, lName);
+                  }
+                  break;
                }
-               break;
             case 'P' :
-               studentList.show();
-               break;
+               {
+                  studentList.show();
+                  break;
+               }
             case 'Q' :
-               exit = true;
-               break;
+               {
+                  exit = true;
+                  break;
+               }
             default:
-               System.out.println("Error, did not recognize input command");
-               exit = true;
-               break;
+               {
+                  System.out.println("Error, did not recognize input command");
+                  exit = true;
+                  break;
+               }
          }
       }
       System.out.println("Program Terminated");
@@ -78,7 +92,7 @@ public class TuitionManager
       }
       return new Outstate(fName, lName, credit, isTristate);
    }
-   private International CreateInternationalFromInput(Scanner sc){
+   private International createInternationalFromInput(Scanner sc){
       String fName = sc.next();
       String lName = sc.next();
       int credit = sc.nextInt();
