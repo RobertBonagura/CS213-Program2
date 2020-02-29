@@ -5,9 +5,9 @@ abstract class Student implements Comparable {
    protected final int PART_TIME_FEE = 846;
    protected final int FULL_TIME_FEE = 1441;
 
-   private String fname;
-   private String lname;
-   protected int credit;
+   private String fName;
+   private String lName;
+   private int credit;
    
    public Student(String fname, String lname, int credit) {
       this.fname = fname;
