@@ -2,12 +2,44 @@ public class Outstate extends Student {
 
    private boolean tristate;
 
-   public Outstate(String fname, String lname, int credit) {
-      super(fname, lname, credit);
+   public Outstate(String fName, String lName, int credit, boolean tristate) {
+      super(fName, lName, credit);
+      this.tristate = tristate;
    }
 
    @Override
    public int tuitionDue() {
-      return 1;
+
+      int costPerCredit = 756;
+      final int DISCOUNT = 200;
+
+      int creditsToBill;
+      if(this.getCredit() > MAX_BILLABLE_CREDITS){
+         creditsToBill = MAX_BILLABLE_CREDITS;
+      } else {
+         creditsToBill = this.getCredit();
+      }
+
+      int feeToPay;
+      if(getCredit() >= FULL_TIME_CREDIT_MIN){
+         feeToPay = FULL_TIME_FEE;
+         if (this.tristate){
+            costPerCredit = costPerCredit - DISCOUNT;
+         }
+      } else {
+         feeToPay = PART_TIME_FEE;
+      }
+
+      return (creditsToBill * costPerCredit) + feeToPay;
+   }
+
+   @Override
+   public String toString() {
+      StringBuilder sb = new StringBuilder(super.toString());
+      String tristateStr = "Lives in Tristate: " + tristate + "\n";
+      String tuitionStr = "Tuition Due: " + tuitionDue();
+      sb.append(tristateStr);
+      sb.append(tuitionStr);
+      return sb.toString();
    }
 }
