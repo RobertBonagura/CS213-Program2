@@ -7,7 +7,7 @@ abstract class Student implements Comparable {
 
    private String fName;
    private String lName;
-   private int credit;
+   protected int credit;
    
    public Student(String fName, String lName, int credit) {
       this.fName = fName;
@@ -29,19 +29,6 @@ abstract class Student implements Comparable {
 
    public String toString() {
       return ("Name: " + fName + " " + lName + "\nCredits: " + credit + "\n");
-   }
-   
-   public String getFName(){
-      return fName;
-   }
-
-   public String getLName(){
-      return lName;
-   }
-
-
-   public int getCredit() {
-      return credit;
    }
 
    public abstract int tuitionDue();
