@@ -7,6 +7,12 @@ public class Instate extends Student
       super(fName, lName, credit);
       this.funding = funding;
    }
+   public boolean isValid(){
+      if(super.credit > 0)
+         return true;
+      else
+         return false;
+   }
    public int tuitionDue(){
 
       final int COST_PER_CREDIT = 433;
