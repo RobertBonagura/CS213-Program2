@@ -12,32 +12,50 @@ public class TuitionManager
             case 'I' :
                {
                   Instate studentToAdd = createInstateFromInput(sc);
-                  if(addRequestIsValid(studentToAdd, studentList)){
-                     studentList.add(studentToAdd);
+                  if(!studentToAdd.isValid()){
+                     System.out.println("Error: invalid student entry");
+                     break;
                   }
+                  if(studentList.contains(studentToAdd)){
+                     System.out.println("Error: list already contains this student");
+                     break;
+                  }
+                  studentList.add(studentToAdd);
                   break;
                }
             case 'O' :
                {
                   Outstate studentToAdd = createOutstateFromInput(sc);
-                  if(addRequestIsValid(studentToAdd, studentList)){
-                     studentList.add(studentToAdd);
+                  if(!studentToAdd.isValid()){
+                     System.out.println("Error: invalid student entry");
+                     break;
                   }
+                  if(studentList.contains(studentToAdd)){
+                     System.out.println("Error: list already contains this student");
+                     break;
+                  }
+                  studentList.add(studentToAdd);
                   break;
                }
             case 'N' :
                {
                   International studentToAdd = createInternationalFromInput(sc);
-                  if(addRequestIsValid(studentToAdd, studentList)){
-                     studentList.add(studentToAdd);
+                  if(!studentToAdd.isValid()){
+                     System.out.println("Error: invalid student entry");
+                     break;
                   }
+                  if(studentList.contains(studentToAdd)){
+                     System.out.println("Error: list already contains this student");
+                     break;
+                  }
+                  studentList.add(studentToAdd);
                   break;
                }
             case 'R' :
                {
                   String fName = sc.next();
                   String lName = sc.next();
-                  Student studentToRemove = new Instate(fName, lName, null, null);
+                  Student studentToRemove = new Instate(fName, lName, 0, 0);
                   if(studentList.contains(studentToRemove)){
                      studentList.remove(studentToRemove);
                   }
@@ -62,16 +80,6 @@ public class TuitionManager
          }
       }
       System.out.println("Program Terminated");
-   }
-   private boolean addRequestIsValid(Student student, StudentList studentList){
-      if(student.getCredit() < 1){
-         return false;
-      } else if( (student instanceof International) && student.getCredit() < 9 ) {
-         return false;
-      } else if (studentList.contains(student)){
-         return false;
-      }
-      return true;
    }
    private Instate createInstateFromInput(Scanner sc){
       String fName = sc.next();
