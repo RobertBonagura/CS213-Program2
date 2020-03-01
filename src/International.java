@@ -10,7 +10,6 @@ public class International extends Student {
 
    @Override
    public int tuitionDue() {
-
       final int COST_PER_CREDIT = 945;
       final int INTERNATIONAL_STUDENT_FEE = 350;
 
@@ -19,14 +18,14 @@ public class International extends Student {
       }
 
       int creditsToBill;
-      if(this.getCredit() > MAX_BILLABLE_CREDITS){
+      if(this.credit > MAX_BILLABLE_CREDITS){
          creditsToBill = MAX_BILLABLE_CREDITS;
       } else {
-         creditsToBill = this.getCredit();
+         creditsToBill = this.credit;
       }
 
       int feeToPay;
-      if(getCredit() >= FULL_TIME_CREDIT_MIN) {
+      if(this.credit >= FULL_TIME_CREDIT_MIN) {
          feeToPay = FULL_TIME_FEE + INTERNATIONAL_STUDENT_FEE;
       } else {
          feeToPay = PART_TIME_FEE + INTERNATIONAL_STUDENT_FEE;
