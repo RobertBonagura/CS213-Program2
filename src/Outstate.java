@@ -7,6 +7,14 @@ public class Outstate extends Student {
       this.tristate = tristate;
    }
 
+   public boolean isValid(){
+      if(super.credit > 0) {
+         return true;
+      } else {
+         return false;
+      }
+   }
+
    @Override
    public int tuitionDue() {
 

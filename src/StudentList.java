@@ -59,6 +59,7 @@ public class StudentList {
          for (int j = i; j < this.students.length - 1; j++){
             this.students[i] = this.students[i+1];
          }
+         this.size--;
          return;
         }
       }
@@ -71,6 +72,9 @@ public class StudentList {
     * @return boolean value indicating whether or list contains the student
     */
    public boolean contains(Student student) {
+      if (this.size == 0){
+         return false;
+      }
       for (Student curStudent : this.students) {
          if (curStudent.compareTo(student) == 0){
             return true;

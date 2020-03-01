@@ -1,11 +1,20 @@
 public class International extends Student {
 
    private boolean exchange;
+   private final int CREDIT_MIN = 9;
 
    public International(String fName, String lName, int credit,
                         boolean exchange) {
       super(fName, lName, credit);
       this.exchange = exchange;
+   }
+
+   public boolean isValid(){
+      if(super.credit >= CREDIT_MIN ) {
+         return true;
+      } else {
+         return false;
+      }
    }
 
    @Override
