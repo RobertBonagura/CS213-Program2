@@ -7,25 +7,31 @@ public class Instate extends Student
       super(fName, lName, credit);
       this.funding = funding;
    }
+   public boolean isValid(){
+      if(super.credit > 0)
+         return true;
+      else
+         return false;
+   }
    public int tuitionDue(){
 
       final int COST_PER_CREDIT = 433;
            
       int creditsToBill;
-      if(getCredit() > MAX_BILLABLE_CREDITS){
+      if(super.credit > MAX_BILLABLE_CREDITS){
          creditsToBill = MAX_BILLABLE_CREDITS;
       } else {
-         creditsToBill = getCredit();
+         creditsToBill = super.credit;
       }
       
       int feeToPay;
-      if(getCredit() >= FULL_TIME_CREDIT_MIN){
+      if(super.credit >= FULL_TIME_CREDIT_MIN){
          feeToPay = FULL_TIME_FEE;
       } else {
          feeToPay = PART_TIME_FEE;
       }
 
-      if (getCredit() < FULL_TIME_CREDIT_MIN) {
+      if (super.credit < FULL_TIME_CREDIT_MIN) {
          this.funding = 0;
       }
 
