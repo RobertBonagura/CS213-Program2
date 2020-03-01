@@ -59,6 +59,8 @@ public class TuitionManager
                   Student studentToRemove = new Instate(fName, lName, NULL, NULL);
                   if(studentList.contains(studentToRemove)){
                      studentList.remove(studentToRemove);
+                  } else {
+                     System.out.println("Error: list does not contain this student");
                   }
                   break;
                }
