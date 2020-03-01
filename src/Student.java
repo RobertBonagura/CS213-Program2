@@ -28,7 +28,7 @@ abstract class Student implements Comparable {
    }
 
    public String toString() {
-      return ("Name: " + fName + " " + lName + "\nCredits: " + credit + "\n");
+      return (fName + " " + lName + " " + credit);
    }
 
    public abstract int tuitionDue();

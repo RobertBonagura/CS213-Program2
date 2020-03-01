@@ -37,6 +37,52 @@ public class Instate extends Student
 
       return (creditsToBill * COST_PER_CREDIT) + feeToPay - funding;
    }
+
+   @Override
+   public String toString(){
+      return (super.toString() + " " + funding);
+   }
+
+   public static void main(String[] args){
+      int testCounter = 1;
+      //Constructor Tests
+      Instate instate1 = new Instate("Ezra", "Haleva", 15, 100);
+      if(instate1.credit == 15){
+         System.out println("Passed test #" + testCounter);
+      } else {
+         System.out.println("failed test #" + testCounter);
+      }
+      testCounter++;
+      if(instate1.funding == 100){
+         System.out println("Passed test #" + testCounter);
+      } else {
+         System.out.println("failed test #" + testCounter);
+      }
+      testCounter++;
+      
+      //isValid() tests
+      Instate validInstate = new Instate("Ezra", "Haleva", 15, 100);
+      Instate invalidInstate = new Instate("Ezra", "Haleva", 0, 100);
+      if(validInstate.isValid){
+         System.out println("Passed test #" + testCounter);
+      } else {
+         System.out.println("failed test #" + testCounter);
+      }
+      testCounter++;
+      if(!invalidInstate.isValid())
+         System.out println("Passed test #" + testCounter);
+      } else {
+         System.out.println("failed test #" + testCounter);
+      }
+      testCounter++;
+
+   
+
+
+
+   }
+
 }
+
 
 
