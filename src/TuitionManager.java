@@ -37,7 +37,8 @@ public class TuitionManager
                {
                   String fName = sc.next();
                   String lName = sc.next();
-                  Student studentToRemove = new Instate(fName, lName, null, null);
+                  int NULL = 0;
+                  Student studentToRemove = new Instate(fName, lName, NULL, NULL);
                   if(studentList.contains(studentToRemove)){
                      studentList.remove(studentToRemove);
                   }
@@ -64,9 +65,9 @@ public class TuitionManager
       System.out.println("Program Terminated");
    }
    private boolean addRequestIsValid(Student student, StudentList studentList){
-      if(student.getCredit() < 1){
+      if(student.credit < 1){
          return false;
-      } else if( (student instanceof International) && student.getCredit() < 9 ) {
+      } else if( (student instanceof International) && student.credit< 9 ) {
          return false;
       } else if (studentList.contains(student)){
          return false;
