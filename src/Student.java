@@ -18,10 +18,10 @@ abstract class Student implements Comparable {
    public int compareTo(Object obj){
       if(obj instanceof Student){
          Student comparedStudent = (Student)(obj);
-         if(fName.compareTo(comparedStudent.getFName()) != 0)
-            return fName.compareTo(comparedStudent.getFName());
+         if(fName.compareTo(comparedStudent.fName) != 0)
+            return fName.compareTo(comparedStudent.fName);
          else{
-            return lName.compareTo(comparedStudent.getLName());
+            return lName.compareTo(comparedStudent.lName);
          }
       }
       return 1;//Only called if obj isn't a student
