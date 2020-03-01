@@ -53,7 +53,7 @@ public class StudentList {
     * index to add a new student.
     * @param student Student to remove from list
     */
-  private void remove(Student student){
+  public void remove(Student student){
       for (int i = 0; i < this.students.length; i++){
         if (this.students[i].compareTo(student) == 0){
          for (int j = i; j < this.students.length - 1; j++){
@@ -63,37 +63,6 @@ public class StudentList {
         }
       }
   }
-
-   /**
-    * Removes student from list.
-    * Iterates through list to find specified student to remove
-    * On each student, compare first and last name to paramaters until a
-    * match is found, or the list ends.
-    * @param fName First name of student to find and remove
-    * @param lName Last name of student to find and remove
-    */
-   public void remove(String fName, String lName) {
-      for (int i = 0; i < this.students.length; i++){
-         if (this.students[i].getFName().compareTo(fName) == 0){
-            if (this.students[i].getLName().compareTo(lName) == 0) {
-               for (int j = i; j < this.students.length - 1; j++){
-                  this.students[i] = this.students[i+1];
-               }
-            }
-            return;
-         }
-      }
-   }
-
-   /**
-    * Prints list of students to console.
-    * Iterates through list and calls toString() method on each student.
-    */
-   public void show(){
-      for (Student student : this.students) {
-         System.out.println(student.toString());
-      }
-   }
 
    /**
     * Checks if student is in list.
@@ -111,23 +80,15 @@ public class StudentList {
    }
 
    /**
-    * Checks if student is in list.
-    * Iterates through list checking each student using compareTo() method
-    * on the student's fName and lName data fields.
-    * @param fName First name of student to remove
-    * @param lName Last name of student to remove
-    * @return boolean value indicating whether or not list contains student
+    * Prints list of students to console.
+    * Iterates through list and calls toString() method on each student.
     */
-   public boolean contains(String fName, String lName) {
-      for (Student curStudent : this.students) {
-         if (curStudent.getFName().compareTo(fName) == 0){
-            if (curStudent.getLName().compareTo(lName) == 0){
-               return true;
-            }
-         }
+   public void show(){
+      for (Student student : this.students) {
+         System.out.println(student.toString());
       }
-      return false;
    }
+
 
 
 }

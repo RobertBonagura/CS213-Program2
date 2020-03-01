@@ -18,20 +18,20 @@ public class Instate extends Student
       final int COST_PER_CREDIT = 433;
            
       int creditsToBill;
-      if(super.credit > MAX_BILLABLE_CREDITS){
+      if(this.credit > MAX_BILLABLE_CREDITS){
          creditsToBill = MAX_BILLABLE_CREDITS;
       } else {
-         creditsToBill = super.credit;
+         creditsToBill = this.credit;
       }
       
       int feeToPay;
-      if(super.credit >= FULL_TIME_CREDIT_MIN){
+      if(this.credit >= FULL_TIME_CREDIT_MIN){
          feeToPay = FULL_TIME_FEE;
       } else {
          feeToPay = PART_TIME_FEE;
       }
 
-      if (super.credit < FULL_TIME_CREDIT_MIN) {
+      if (this.credit < FULL_TIME_CREDIT_MIN) {
          this.funding = 0;
       }
 

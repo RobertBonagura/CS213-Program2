@@ -55,7 +55,8 @@ public class TuitionManager
                {
                   String fName = sc.next();
                   String lName = sc.next();
-                  Student studentToRemove = new Instate(fName, lName, 0, 0);
+                  int NULL = 0;
+                  Student studentToRemove = new Instate(fName, lName, NULL, NULL);
                   if(studentList.contains(studentToRemove)){
                      studentList.remove(studentToRemove);
                   }
