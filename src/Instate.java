@@ -143,7 +143,7 @@ public class Instate extends Student
       
       //ToString() tests
       Instate instate7 = new Instate("Ezra", "Haleva", 11, 100);
-      if(instate7.toString().equals("Name: Ezra Haleva\nCredits: 11"))
+      if(instate7.toString().equals("Name: Ezra Haleva\nCredits: 11\nFunding: 100"))
          System.out.println("Passed test #" + testCounter);
       } else {
          System.out.println("failed test #" + testCounter);
