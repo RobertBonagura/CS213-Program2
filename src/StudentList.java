@@ -96,7 +96,7 @@ public class StudentList {
          return false;
       }
       for (Student curStudent : this.students) {
-         if (curStudent.compareTo(student) == 0){
+         if (student.compareTo(curStudent) == 0){
             return true;
          }
       }
