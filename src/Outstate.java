@@ -48,4 +48,5 @@ public class Outstate extends Student {
       }else{
          return false;
       }
+   }
 }
