@@ -99,9 +99,47 @@ public class Instate extends Student
       }
       testCounter++;
    
+      //tuitionDue() tests
+      final int COST_PER_CREDIT = 433;
+      Instate instate2 = new Instate("Ezra", "Haleva", 15, 0);
+      if(instate2.tuitionDue()==( COST_PER_CREDIT * 15 + FULL_TIME_FEE) ){
+         System.out.println("Passed test #" + testCounter);
+      } else {
+         System.out.println("failed test #" + testCounter);
+      }
+      testCounter++;
 
+      Instate instate3 = new Instate("Ezra", "Haleva", 18, 0);
+      if(instate3.tuitionDue()==( COST_PER_CREDIT * 15 + FULL_TIME_FEE) ){
+         System.out.println("Passed test #" + testCounter);
+      } else {
+         System.out.println("failed test #" + testCounter);
+      }
+      testCounter++;
+      
+      Instate instate4 = new Instate("Ezra", "Haleva", 11, 0);
+      if(instate4.tuitionDue()==( COST_PER_CREDIT * 11 + PART_TIME_FEE) ){
+         System.out.println("Passed test #" + testCounter);
+      } else {
+         System.out.println("failed test #" + testCounter);
+      }
+      testCounter++;
 
+      Instate instate5 = new Instate("Ezra", "Haleva", 15, 1000);
+      if(instate5.tuitionDue()==( COST_PER_CREDIT * 15 + FULL_TIME_FEE + 1000) ){
+         System.out.println("Passed test #" + testCounter);
+      } else {
+         System.out.println("failed test #" + testCounter);
+      }
+      testCounter++;
 
+      Instate instate6 = new Instate("Ezra", "Haleva", 11, 1000);
+      if(instate6.tuitionDue()==( COST_PER_CREDIT * 11 + PART_TIME_FEE) ){
+         System.out.println("Passed test #" + testCounter);
+      } else {
+         System.out.println("failed test #" + testCounter);
+      }
+      testCounter++;
    }
 
 }
