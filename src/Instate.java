@@ -68,6 +68,7 @@ public class Instate extends Student
 
    public static void main(String[] args){
       int testCounter = 1;
+      Instate instate0 = new Instate("Ezra", "Haleva", 0, 0);//for access of constants
       //Constructor Tests
       Instate instate1 = new Instate("Ezra", "Haleva", 15, 100);
       if(instate1.credit == 15){
@@ -102,7 +103,7 @@ public class Instate extends Student
       //tuitionDue() tests
       final int COST_PER_CREDIT = 433;
       Instate instate2 = new Instate("Ezra", "Haleva", 15, 0);
-      if(instate2.tuitionDue()==( COST_PER_CREDIT * 15 + FULL_TIME_FEE) ){
+      if(instate2.tuitionDue()==( COST_PER_CREDIT * 15 + instate0.FULL_TIME_FEE) ){
          System.out.println("Passed test #" + testCounter);
       } else {
          System.out.println("failed test #" + testCounter);
@@ -110,7 +111,7 @@ public class Instate extends Student
       testCounter++;
 
       Instate instate3 = new Instate("Ezra", "Haleva", 18, 0);
-      if(instate3.tuitionDue()==( COST_PER_CREDIT * 15 + FULL_TIME_FEE) ){
+      if(instate3.tuitionDue()==( COST_PER_CREDIT * 15 + instate0.FULL_TIME_FEE) ){
          System.out.println("Passed test #" + testCounter);
       } else {
          System.out.println("failed test #" + testCounter);
@@ -118,7 +119,7 @@ public class Instate extends Student
       testCounter++;
       
       Instate instate4 = new Instate("Ezra", "Haleva", 11, 0);
-      if(instate4.tuitionDue()==( COST_PER_CREDIT * 11 + PART_TIME_FEE) ){
+      if(instate4.tuitionDue()==( COST_PER_CREDIT * 11 + instate0.PART_TIME_FEE) ){
          System.out.println("Passed test #" + testCounter);
       } else {
          System.out.println("failed test #" + testCounter);
@@ -126,7 +127,7 @@ public class Instate extends Student
       testCounter++;
 
       Instate instate5 = new Instate("Ezra", "Haleva", 15, 1000);
-      if(instate5.tuitionDue()==( COST_PER_CREDIT * 15 + FULL_TIME_FEE + 1000) ){
+      if(instate5.tuitionDue()==( COST_PER_CREDIT * 15 + instate0.FULL_TIME_FEE + 1000) ){
          System.out.println("Passed test #" + testCounter);
       } else {
          System.out.println("failed test #" + testCounter);
@@ -134,7 +135,7 @@ public class Instate extends Student
       testCounter++;
 
       Instate instate6 = new Instate("Ezra", "Haleva", 11, 1000);
-      if(instate6.tuitionDue()==( COST_PER_CREDIT * 11 + PART_TIME_FEE) ){
+      if(instate6.tuitionDue()==( COST_PER_CREDIT * 11 + instate0.PART_TIME_FEE) ){
          System.out.println("Passed test #" + testCounter);
       } else {
          System.out.println("failed test #" + testCounter);
@@ -143,7 +144,7 @@ public class Instate extends Student
       
       //ToString() tests
       Instate instate7 = new Instate("Ezra", "Haleva", 11, 100);
-      if(instate7.toString().equals("Name: Ezra Haleva\nCredits: 11\nFunding: 100"))
+      if(instate7.toString().equals("Name: Ezra Haleva\nCredits: 11\nFunding: 100")){
          System.out.println("Passed test #" + testCounter);
       } else {
          System.out.println("failed test #" + testCounter);
