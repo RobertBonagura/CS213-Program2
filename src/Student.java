@@ -54,7 +54,7 @@ abstract class Student implements Comparable {
    @return string representation of fields.
    */
    public String toString() {
-      return (fName + " " + lName + " " + credit);
+      return ("Name: " + fName + " " + lName + "\nCredits: " + credit);
    }
 
    /**

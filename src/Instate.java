@@ -93,7 +93,7 @@ public class Instate extends Student
          System.out.println("failed test #" + testCounter);
       }
       testCounter++;
-      if(!invalidInstate.isValid()){
+      if(!invalidInstate.isValid()) {
          System.out.println("Passed test #" + testCounter);
       } else {
          System.out.println("failed test #" + testCounter);

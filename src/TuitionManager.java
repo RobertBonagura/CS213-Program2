@@ -5,10 +5,10 @@ public class TuitionManager
    Abstracted entry point of program.
    Main should call this method once. 
    */
-   public void run(){
+   public void run(){                   
       Scanner sc = new Scanner(System.in);
       StudentList studentList = new StudentList();
-
+  
       boolean exit = false;
       while(!exit){
          char command = sc.next().charAt(0);
@@ -111,9 +111,9 @@ public class TuitionManager
       String fName = sc.next();
       String lName = sc.next();
       int credit = sc.nextInt();
-      int tristateChar = sc.nextInt();
+      String tristateStr = sc.next();
       boolean isTristate;
-      if(tristateChar == 'T'){
+      if(tristateStr.charAt(0) == 'T'){
          isTristate = true;
       }else{
          isTristate = false;
@@ -130,9 +130,9 @@ public class TuitionManager
       String fName = sc.next();
       String lName = sc.next();
       int credit = sc.nextInt();
-      int exchangeChar = sc.nextInt();
+      String exchangeStr = sc.next();
       boolean isExchange;
-      if(exchangeChar == 'T'){
+      if(exchangeStr.charAt(0) == 'T'){
          isExchange = true;
       } else{
          isExchange = false;
