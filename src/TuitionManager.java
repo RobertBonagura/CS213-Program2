@@ -1,7 +1,8 @@
 import java.util.Scanner;
 public class TuitionManager
 {
-   public void run(){
+
+   public static void main(String[] args) {
       Scanner sc = new Scanner(System.in);
       StudentList studentList = new StudentList();
 
@@ -84,33 +85,34 @@ public class TuitionManager
       }
       System.out.println("Program Terminated");
    }
-   private Instate createInstateFromInput(Scanner sc){
+
+   private static Instate createInstateFromInput(Scanner sc){
       String fName = sc.next();
       String lName = sc.next();
       int credit = sc.nextInt();
       int funding = sc.nextInt();
       return new Instate(fName, lName, credit, funding);
    }
-   private Outstate createOutstateFromInput(Scanner sc){
+   private static Outstate createOutstateFromInput(Scanner sc){
       String fName = sc.next();
       String lName = sc.next();
       int credit = sc.nextInt();
-      int tristateChar = sc.nextInt();
+      String tristateStr = sc.next();
       boolean isTristate;
-      if(tristateChar == 'T'){
+      if(tristateStr.charAt(0) == 'T'){
          isTristate = true;
       }else{
          isTristate = false;
       }
       return new Outstate(fName, lName, credit, isTristate);
    }
-   private International createInternationalFromInput(Scanner sc){
+   private static International createInternationalFromInput(Scanner sc){
       String fName = sc.next();
       String lName = sc.next();
       int credit = sc.nextInt();
-      int exchangeChar = sc.nextInt();
+      String exchangeStr = sc.next();
       boolean isExchange;
-      if(exchangeChar == 'T'){
+      if(exchangeStr.charAt(0) == 'T'){
          isExchange = true;
       } else{
          isExchange = false;
