@@ -64,7 +64,13 @@ public class Outstate extends Student {
       sb.append(tuitionStr);
       return sb.toString();
    }
-
+   public boolean isValid(){
+      if(credit > 0){
+         return true;
+      }else{
+         return false;
+      }
+   }
    public static void main(String[] args) {
       System.out.println("Test Case 1:");
       System.out.println("Checks default constructor and TuitionDue() " +

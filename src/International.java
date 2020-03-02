@@ -52,6 +52,13 @@ public class International extends Student {
       sb.append(tuitionStr);
       return sb.toString();
    }
+   public boolean isValid(){
+      if(credit >= 9){
+         return true;
+      }else{
+         return false;
+      }
+   }
 
    public static void main(String[] args) {
       System.out.println("Test Case 1:");
@@ -109,5 +116,4 @@ public class International extends Student {
                       "taking a valid number of credits: %s\n", CREDIT_MIN,
               internat2.isValid());
    }
-
 }
