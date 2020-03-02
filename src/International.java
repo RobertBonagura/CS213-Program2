@@ -43,5 +43,12 @@ public class International extends Student {
       sb.append(tuitionStr);
       return sb.toString();
    }
-
+   
+   public boolean isValid(){
+      if(this.credits >= 9){
+         return true;
+      }else{
+         return false;
+      }
+   }
 }

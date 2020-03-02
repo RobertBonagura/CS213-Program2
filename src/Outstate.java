@@ -42,4 +42,10 @@ public class Outstate extends Student {
       sb.append(tuitionStr);
       return sb.toString();
    }
+   public void isValid(){
+      if(credits > 0){
+         return true;
+      }else{
+         return false;
+      }
 }
