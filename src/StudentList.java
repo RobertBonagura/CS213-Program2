@@ -108,7 +108,8 @@ public class StudentList {
     * Iterates through list and calls toString() method on each student.
     */
    public void show(){
-      for (Student student : this.students) {
+      for (int i = 0; i < this.getSize(); i++) {
+         Student student = this.students[i];
          System.out.println(student.toString());
       }
    }
