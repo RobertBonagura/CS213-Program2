@@ -18,6 +18,14 @@ public class StudentList {
    }
 
    /**
+    * Gets size of List.
+    * @return Size of List
+    */
+   public int getSize() {
+      return size;
+   }
+
+   /**
     * Adds student to list of Students.
     * @param student Student to add to list
     */
@@ -57,13 +65,25 @@ public class StudentList {
       for (int i = 0; i < this.students.length; i++){
         if (this.students[i].compareTo(student) == 0){
          for (int j = i; j < this.students.length - 1; j++){
-            this.students[i] = this.students[i+1];
+            this.students[j] = this.students[j+1];
          }
          this.size--;
          return;
         }
       }
   }
+
+   /**
+    * Removes first student from list.
+    */
+   public Student remove(){
+     Student student = this.students[0];
+     for (int i = 0; i < this.students.length - 1; i++){
+        this.students[i] = this.students[i+1];
+     }
+     this.size--;
+     return student;
+   }
 
    /**
     * Checks if student is in list.
