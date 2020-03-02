@@ -63,7 +63,7 @@ public class Instate extends Student
    */
    @Override
    public String toString(){
-      return (super.toString() + " " + funding);
+      return (super.toString() + "\nFunding: " + funding);
    }
 
    public static void main(String[] args){
