@@ -1,3 +1,4 @@
+import java.util.InputMismatchException;
 import java.util.Scanner;
 public class TuitionManager
 {
@@ -8,83 +9,81 @@ public class TuitionManager
    public void run(){                   
       Scanner sc = new Scanner(System.in);
       StudentList studentList = new StudentList();
-  
+
       boolean exit = false;
       while(!exit){
-         char command = sc.next().charAt(0);
-         switch(command){
-            case 'I' :
-               {
+
+         try {
+            char command = sc.next().charAt(0);
+            switch (command) {
+               case 'I': {
                   Instate studentToAdd = createInstateFromInput(sc);
-                  if(!studentToAdd.isValid()){
+                  if (!studentToAdd.isValid()) {
                      System.out.println("Error: invalid student entry");
                      break;
                   }
-                  if(studentList.contains(studentToAdd)){
+                  if (studentList.contains(studentToAdd)) {
                      System.out.println("Error: list already contains this student");
                      break;
                   }
                   studentList.add(studentToAdd);
                   break;
                }
-            case 'O' :
-               {
+               case 'O': {
                   Outstate studentToAdd = createOutstateFromInput(sc);
-                  if(!studentToAdd.isValid()){
+                  if (!studentToAdd.isValid()) {
                      System.out.println("Error: invalid student entry");
                      break;
                   }
-                  if(studentList.contains(studentToAdd)){
+                  if (studentList.contains(studentToAdd)) {
                      System.out.println("Error: list already contains this student");
                      break;
                   }
                   studentList.add(studentToAdd);
                   break;
                }
-            case 'N' :
-               {
+               case 'N': {
                   International studentToAdd = createInternationalFromInput(sc);
-                  if(!studentToAdd.isValid()){
+                  if (!studentToAdd.isValid()) {
                      System.out.println("Error: invalid student entry");
                      break;
                   }
-                  if(studentList.contains(studentToAdd)){
+                  if (studentList.contains(studentToAdd)) {
                      System.out.println("Error: list already contains this student");
                      break;
                   }
                   studentList.add(studentToAdd);
                   break;
                }
-            case 'R' :
-               {
+               case 'R': {
                   String fName = sc.next();
                   String lName = sc.next();
                   int NULL = 0;
                   Student studentToRemove = new Instate(fName, lName, NULL, NULL);
-                  if(studentList.contains(studentToRemove)){
+                  if (studentList.contains(studentToRemove)) {
                      studentList.remove(studentToRemove);
                   } else {
                      System.out.println("Error: list does not contain this student");
                   }
                   break;
                }
-            case 'P' :
-               {
+               case 'P': {
                   studentList.show();
                   break;
                }
-            case 'Q' :
-               {
+               case 'Q': {
                   exit = true;
                   break;
                }
-            default:
-               {
+               default: {
                   System.out.println("Error, did not recognize input command");
-                  exit = true;
                   break;
                }
+            }
+         } catch (InputMismatchException e){
+            System.out.println("Error, bad input. Please Try again");
          }
+
       }
       System.out.println("Program Terminated");
    }

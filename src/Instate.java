@@ -24,10 +24,11 @@ public class Instate extends Student
    Ensures student is signed up for an appropriate amount of credits.
    */
    public boolean isValid(){
-      if(super.credit > 0)
+      if(super.credit > 0 && this.funding > 0){
          return true;
-      else
+      } else {
          return false;
+      }
    }
    /**
    Calculates the tuition owed by the student.
@@ -63,7 +64,7 @@ public class Instate extends Student
    */
    @Override
    public String toString(){
-      return (super.toString() + "\nFunding: " + funding);
+      return (super.toString() + "\nFunding: " + funding + "\nTuition Due: " + this.tuitionDue());
    }
 
    public static void main(String[] args){
@@ -127,7 +128,7 @@ public class Instate extends Student
       testCounter++;
 
       Instate instate5 = new Instate("Ezra", "Haleva", 15, 1000);
-      if(instate5.tuitionDue()==( COST_PER_CREDIT * 15 + instate0.FULL_TIME_FEE + 1000) ){
+      if(instate5.tuitionDue()==( COST_PER_CREDIT * 15 + instate0.FULL_TIME_FEE - 1000) ){
          System.out.println("Passed test #" + testCounter);
       } else {
          System.out.println("failed test #" + testCounter);
@@ -144,7 +145,7 @@ public class Instate extends Student
       
       //ToString() tests
       Instate instate7 = new Instate("Ezra", "Haleva", 11, 100);
-      if(instate7.toString().equals("Name: Ezra Haleva\nCredits: 11\nFunding: 100")){
+      if(instate7.toString().equals("Name: Ezra Haleva\nCredits: 11\nFunding: 100\nTuition Due: " + instate7.tuitionDue())){
          System.out.println("Passed test #" + testCounter);
       } else {
          System.out.println("failed test #" + testCounter);

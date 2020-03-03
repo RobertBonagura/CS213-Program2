@@ -108,6 +108,9 @@ public class StudentList {
     * Iterates through list and calls toString() method on each student.
     */
    public void show(){
+      if (this.size == 0){
+         System.out.println("The list is empty");
+      }
       for (int i = 0; i < this.getSize(); i++) {
          Student student = this.students[i];
          System.out.println(student.toString());

@@ -1,8 +1,18 @@
+/**
+ * Class used to represent International Student.
+ */
 public class International extends Student {
 
    private boolean exchange;
    private static final int CREDIT_MIN = 9;
 
+   /**
+    * Default constructor
+    * @param fName First name of student
+    * @param lName Last name of student
+    * @param credit Number of credits taken
+    * @param exchange Whether or not student is an exchange student or not
+    */
    public International(String fName, String lName, int credit,
                         boolean exchange) {
       super(fName, lName, credit);
@@ -51,13 +61,6 @@ public class International extends Student {
       sb.append(exchangeStr);
       sb.append(tuitionStr);
       return sb.toString();
-   }
-   public boolean isValid(){
-      if(credit >= 9){
-         return true;
-      }else{
-         return false;
-      }
    }
 
    public static void main(String[] args) {
