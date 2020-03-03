@@ -1,5 +1,6 @@
 /**
  * Class used to represent an Out-Of-State student.
+ * @author Robert Bonagura
  */
 public class Outstate extends Student {
 
@@ -29,6 +30,10 @@ public class Outstate extends Student {
       }
    }
 
+   /**
+    * Calculates Tutition due by Student.
+    * @return Tuition due
+    */
    @Override
    public int tuitionDue() {
 
@@ -55,6 +60,10 @@ public class Outstate extends Student {
       return (creditsToBill * costPerCredit) + feeToPay;
    }
 
+   /**
+    * Converts all relevant information about student into a string.
+    * @return String representation of Student info
+    */
    @Override
    public String toString() {
       StringBuilder sb = new StringBuilder(super.toString());
@@ -65,6 +74,10 @@ public class Outstate extends Student {
       return sb.toString();
    }
 
+   /**
+    * Test bed main function for all methods of this class.
+    * @param args
+    */
    public static void main(String[] args) {
       System.out.println("Test Case 1:");
       System.out.println("Checks default constructor and TuitionDue() " +

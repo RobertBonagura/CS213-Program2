@@ -4,7 +4,8 @@ public class TuitionManager
 {
    /**
    Abstracted entry point of program.
-   Main should call this method once. 
+   Main should call this method once.
+    @author Ezra Haleva
    */
    public void run(){                   
       Scanner sc = new Scanner(System.in);

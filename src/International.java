@@ -1,5 +1,6 @@
 /**
  * Class used to represent International Student.
+ * @author Robert Bonagura
  */
 public class International extends Student {
 
@@ -27,6 +28,10 @@ public class International extends Student {
       }
    }
 
+   /**
+    * Calculattes tuition due by student.
+    * @return
+    */
    @Override
    public int tuitionDue() {
       final int COST_PER_CREDIT = 945;
@@ -53,6 +58,10 @@ public class International extends Student {
       return (creditsToBill * COST_PER_CREDIT) + feeToPay;
    }
 
+   /**
+    * Creates String representation of all relevant information about student.
+    * @return
+    */
    @Override
    public String toString() {
       StringBuilder sb = new StringBuilder(super.toString());
@@ -63,6 +72,10 @@ public class International extends Student {
       return sb.toString();
    }
 
+   /**
+    * Test bed main function for all constructors and methods of this class.
+    * @param args
+    */
    public static void main(String[] args) {
       System.out.println("Test Case 1:");
       System.out.println("Checks default constructor and TuitionDue() " +

@@ -1,5 +1,6 @@
 /**
  * Class used to run TuitionManager class for Program 2.
+ * @author Ezra Haleva and Robert Bonagura
  */
 public class Prog2
 {
